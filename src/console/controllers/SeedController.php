@@ -1,6 +1,6 @@
 <?php
 
-namespace alanjancic\seeder\console\controllers;
+namespace alanjancic\sprout\console\controllers;
 
 use Craft;
 use craft\console\Controller;
@@ -40,7 +40,7 @@ class SeedController extends Controller
         $seeders = $this->registeredSeeders();
 
         if (empty($seeders)) {
-            $this->stderr("No seeders found under config/seeders/. Run `craft seeder/seed/make-seeder MyThing` to create one.\n", Console::FG_RED);
+            $this->stderr("No seeders found under config/seeders/. Run `craft sprout/seed/make-seeder MyThing` to create one.\n", Console::FG_RED);
             return ExitCode::UNSPECIFIED_ERROR;
         }
 
@@ -66,7 +66,7 @@ class SeedController extends Controller
     /** Deletes everything seed/run has created, or just --only=<name>. Asks for confirmation first. */
     public function actionClean(): int
     {
-        $query = (new Query())->from('{{%seeder_log}}');
+        $query = (new Query())->from('{{%sprout_log}}');
         if ($this->only) {
             $query->andWhere(['seederName' => $this->only]);
         }
@@ -91,7 +91,7 @@ class SeedController extends Controller
         }
 
         Craft::$app->getDb()->createCommand()
-            ->delete('{{%seeder_log}}', $this->only ? ['seederName' => $this->only] : '')
+            ->delete('{{%sprout_log}}', $this->only ? ['seederName' => $this->only] : '')
             ->execute();
 
         $this->stdout("Deleted {$deleted} seeded element(s).\n", Console::FG_GREEN);
@@ -108,13 +108,13 @@ class SeedController extends Controller
         }
 
         foreach ($seeders as $name => $class) {
-            $count = (new Query())->from('{{%seeder_log}}')->where(['seederName' => $name])->count();
+            $count = (new Query())->from('{{%sprout_log}}')->where(['seederName' => $name])->count();
             $this->stdout(sprintf("%-24s %s  (%d seeded)\n", $name, $class, $count));
         }
         return ExitCode::OK;
     }
 
-    /** `craft seeder/seed/make-factory Foo` — scaffolds config/factories/FooFactory.php. */
+    /** `craft sprout/seed/make-factory Foo` — scaffolds config/factories/FooFactory.php. */
     public function actionMakeFactory(string $name): int
     {
         $className = str_ends_with($name, 'Factory') ? $name : "{$name}Factory";
@@ -132,7 +132,7 @@ class SeedController extends Controller
 
 namespace config\\factories;
 
-use alanjancic\\seeder\\factories\\Factory;
+use alanjancic\\sprout\\factories\\Factory;
 use craft\\elements\\Entry;
 
 class {$className} extends Factory
@@ -158,7 +158,7 @@ PHP);
         return ExitCode::OK;
     }
 
-    /** `craft seeder/seed/make-seeder Foo` — scaffolds config/seeders/FooSeeder.php, wired to FooFactory. */
+    /** `craft sprout/seed/make-seeder Foo` — scaffolds config/seeders/FooSeeder.php, wired to FooFactory. */
     public function actionMakeSeeder(string $name): int
     {
         $base = str_ends_with($name, 'Seeder') ? substr($name, 0, -6) : $name;
@@ -178,7 +178,7 @@ PHP);
 
 namespace config\\seeders;
 
-use alanjancic\\seeder\\Seeder;
+use alanjancic\\sprout\\Seeder;
 use config\\factories\\{$factoryClassName};
 
 class {$className} extends Seeder
@@ -229,7 +229,7 @@ PHP);
         ], $elements);
 
         $db->createCommand()->batchInsert(
-            '{{%seeder_log}}',
+            '{{%sprout_log}}',
             ['elementId', 'elementType', 'seederName', 'dateCreated', 'dateUpdated', 'uid'],
             $rows
         )->execute();

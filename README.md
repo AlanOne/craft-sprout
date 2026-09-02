@@ -1,4 +1,4 @@
-# Seeder
+# Sprout
 
 Laravel-style factories and seeders for Craft CMS — generate and tear down realistic demo
 content from the command line, with a backup-safe, all-or-nothing create step.
@@ -24,11 +24,11 @@ class BlogPostFactory extends Factory
 ```
 
 ```bash
-php craft seeder/seed/make-factory BlogPost   # scaffold config/factories/BlogPostFactory.php
-php craft seeder/seed/make-seeder BlogPost    # scaffold config/seeders/BlogPostSeeder.php
-php craft seeder/seed/run --count=20          # run every seeder (or --only=BlogPostSeeder)
-php craft seeder/seed/list                    # see every registered seeder + how much it's seeded
-php craft seeder/seed/clean                   # delete everything seed/run has ever created
+php craft sprout/seed/make-factory BlogPost   # scaffold config/factories/BlogPostFactory.php
+php craft sprout/seed/make-seeder BlogPost    # scaffold config/seeders/BlogPostSeeder.php
+php craft sprout/seed/run --count=20          # run every seeder (or --only=BlogPostSeeder)
+php craft sprout/seed/list                    # see every registered seeder + how much it's seeded
+php craft sprout/seed/clean                   # delete everything seed/run has ever created
 ```
 
 ## Why not just write a script?
@@ -41,8 +41,8 @@ broken factory never leaves orphaned content that `clean` doesn't know about.
 ## Installation
 
 ```bash
-composer require alanjancic/craft-seeder
-php craft plugin/install seeder
+composer require alanjancic/craft-sprout
+php craft plugin/install sprout
 ```
 
 ## Requirements
@@ -51,7 +51,7 @@ Craft CMS 5.0 or later.
 
 ## Writing a factory
 
-Extend `alanjancic\seeder\factories\Factory` and implement `elementClass()` and
+Extend `alanjancic\sprout\factories\Factory` and implement `elementClass()` and
 `definition()`. A few resolver helpers are available for the lookups every factory needs:
 
 - `$this->sectionId('handle')`
@@ -64,7 +64,7 @@ Chain `->count(20)` and `->state([...])` (attribute overrides) before `->create(
 
 ## Writing a seeder
 
-Extend `alanjancic\seeder\Seeder` and implement `run(?int $countOverride): array`, returning
+Extend `alanjancic\sprout\Seeder` and implement `run(?int $countOverride): array`, returning
 whatever the factory created — that return value is what gets tracked for `seed/clean`.
 
 ## License

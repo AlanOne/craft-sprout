@@ -1,6 +1,6 @@
 <?php
 
-namespace alanjancic\seeder;
+namespace alanjancic\sprout;
 
 /**
  * Extend this class in config/seeders/ to define a named, runnable seeder.

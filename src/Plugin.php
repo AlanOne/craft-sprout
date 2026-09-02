@@ -1,6 +1,6 @@
 <?php
 
-namespace alanjancic\seeder;
+namespace alanjancic\sprout;
 
 use Craft;
 use craft\base\Plugin as BasePlugin;
@@ -18,7 +18,7 @@ class Plugin extends BasePlugin
         self::$instance = $this;
 
         if (Craft::$app instanceof ConsoleApplication) {
-            $this->controllerNamespace = 'alanjancic\\seeder\\console\\controllers';
+            $this->controllerNamespace = 'alanjancic\\sprout\\console\\controllers';
         }
 
         $this->registerConfigAutoloader();

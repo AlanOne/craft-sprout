@@ -1,18 +1,18 @@
 {
-    "name": "alanjancic/craft-seeder",
+    "name": "alanjancic/craft-sprout",
     "description": "Laravel-style factories and seeders for Craft CMS — generate and tear down realistic demo content from the command line.",
     "type": "craft-plugin",
     "license": "proprietary",
     "keywords": ["seeder", "factory", "faker", "demo content", "fake data", "fixtures", "dev tools"],
-    "homepage": "https://github.com/AlanOne/craft-seeder",
+    "homepage": "https://github.com/AlanOne/craft-sprout",
     "authors": [
         {
             "name": "Alan Jancic"
         }
     ],
     "support": {
-        "issues": "https://github.com/AlanOne/craft-seeder/issues",
-        "source": "https://github.com/AlanOne/craft-seeder"
+        "issues": "https://github.com/AlanOne/craft-sprout/issues",
+        "source": "https://github.com/AlanOne/craft-sprout"
     },
     "require": {
         "php": "^8.2",
@@ -21,15 +21,15 @@
     },
     "autoload": {
         "psr-4": {
-            "alanjancic\\seeder\\": "src/"
+            "alanjancic\\sprout\\": "src/"
         }
     },
     "extra": {
-        "name": "Seeder",
-        "handle": "seeder",
+        "name": "Sprout",
+        "handle": "sprout",
         "developer": "Alan Jancic",
-        "class": "alanjancic\\seeder\\Plugin",
-        "documentationUrl": "https://github.com/AlanOne/craft-seeder#readme",
-        "changelogUrl": "https://raw.githubusercontent.com/AlanOne/craft-seeder/master/CHANGELOG.md"
+        "class": "alanjancic\\sprout\\Plugin",
+        "documentationUrl": "https://github.com/AlanOne/craft-sprout#readme",
+        "changelogUrl": "https://raw.githubusercontent.com/AlanOne/craft-sprout/master/CHANGELOG.md"
     }
 }

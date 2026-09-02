@@ -1,6 +1,6 @@
 <?php
 
-namespace alanjancic\seeder\migrations;
+namespace alanjancic\sprout\migrations;
 
 use craft\db\Migration;
 
@@ -8,7 +8,7 @@ class Install extends Migration
 {
     public function safeUp(): bool
     {
-        $this->createTable('{{%seeder_log}}', [
+        $this->createTable('{{%sprout_log}}', [
             'id' => $this->primaryKey(),
             'elementId' => $this->integer()->notNull(),
             'elementType' => $this->string()->notNull(),
@@ -18,15 +18,15 @@ class Install extends Migration
             'uid' => $this->uid(),
         ]);
 
-        $this->createIndex(null, '{{%seeder_log}}', ['seederName']);
-        $this->createIndex(null, '{{%seeder_log}}', ['elementId']);
+        $this->createIndex(null, '{{%sprout_log}}', ['seederName']);
+        $this->createIndex(null, '{{%sprout_log}}', ['elementId']);
 
         return true;
     }
 
     public function safeDown(): bool
     {
-        $this->dropTableIfExists('{{%seeder_log}}');
+        $this->dropTableIfExists('{{%sprout_log}}');
         return true;
     }
 }

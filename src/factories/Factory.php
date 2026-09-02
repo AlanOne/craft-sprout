@@ -1,6 +1,6 @@
 <?php
 
-namespace alanjancic\seeder\factories;
+namespace alanjancic\sprout\factories;
 
 use Craft;
 use craft\base\Element;
