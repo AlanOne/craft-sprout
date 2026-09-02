@@ -1,17 +1,19 @@
-# License
+# The Craft License
 
-Copyright © Alan Jancic. All rights reserved.
+Copyright © Alan Jancic
 
-This plugin is commercial software. A license purchased through the Craft Plugin Store
-grants the right to use this plugin on a single Craft CMS installation (production +
-its staging/development environments), consistent with Craft's standard plugin licensing
-terms (see https://craftcms.com/license).
+Permission is hereby granted to any person obtaining a copy of this software (the "Software") to use, copy, modify, merge, publish and/or distribute copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-Redistribution or resale of this plugin's source code, in original or modified form, is not
-permitted without express written permission.
+1. **Don't plagiarize.** "The above copyright notice and this license shall be included in all copies or substantial portions of the Software."
 
-This software is provided "as is," without warranty of any kind.
+2. **Don't use the same license on more than one project.** "Each licensed copy of the Software shall be actively installed in no more than one production environment at a time."
 
----
-*Review before publishing — adjust terms as you see fit; this is a standard starting point,
-not a substitute for your own legal judgment.*
+3. **Don't mess with the licensing features.** "Software features related to licensing shall not be altered or circumvented in any way, including (but not limited to) license validation, payment prompts, feature restrictions, and update eligibility."
+
+4. **Pay up.** "Payment shall be made immediately upon receipt of any notice, prompt, reminder, or other message indicating that a payment is owed."
+
+5. **Follow the law.** "All use of the Software shall not violate any applicable law or regulation, nor infringe the rights of any other person or entity."
+
+Failure to comply results in automatic termination. No updates or support are included. Users assume all risks and liabilities.
+
+"THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT."
