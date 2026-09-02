@@ -4,11 +4,16 @@
     "type": "craft-plugin",
     "license": "proprietary",
     "keywords": ["craft", "cms", "craftcms", "seeder", "factory", "faker", "demo content"],
+    "homepage": "https://github.com/AlanOne/craft-seeder",
     "authors": [
         {
             "name": "Alan Jancic"
         }
     ],
+    "support": {
+        "issues": "https://github.com/AlanOne/craft-seeder/issues",
+        "source": "https://github.com/AlanOne/craft-seeder"
+    },
     "require": {
         "php": "^8.2",
         "craftcms/cms": "^5.0.0",
@@ -23,6 +28,8 @@
         "name": "Seeder",
         "handle": "seeder",
         "developer": "Alan Jancic",
-        "class": "alanjancic\\seeder\\Plugin"
+        "class": "alanjancic\\seeder\\Plugin",
+        "documentationUrl": "https://github.com/AlanOne/craft-seeder#readme",
+        "changelogUrl": "https://raw.githubusercontent.com/AlanOne/craft-seeder/master/CHANGELOG.md"
     }
 }
