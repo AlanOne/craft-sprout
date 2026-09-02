@@ -1,0 +1,28 @@
+{
+    "name": "alanjancic/craft-seeder",
+    "description": "Laravel-style factories and seeders for Craft CMS — generate and tear down realistic demo content from the command line.",
+    "type": "craft-plugin",
+    "license": "proprietary",
+    "keywords": ["craft", "cms", "craftcms", "seeder", "factory", "faker", "demo content"],
+    "authors": [
+        {
+            "name": "Alan Jancic"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "craftcms/cms": "^5.0.0",
+        "fakerphp/faker": "^1.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "alanjancic\\seeder\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Seeder",
+        "handle": "seeder",
+        "developer": "Alan Jancic",
+        "class": "alanjancic\\seeder\\Plugin"
+    }
+}

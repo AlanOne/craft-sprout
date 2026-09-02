@@ -1,0 +1,28 @@
+services:
+  mysql:
+    image: mysql:8
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: craft_test
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: "1000:1000"
+    environment:
+      HOME: /tmp
+    working_dir: /app
+    volumes:
+      - ../:/app
+    depends_on:
+      - mysql
+    tty: true
+
+volumes:
+  mysql_data:
