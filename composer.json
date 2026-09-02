@@ -3,7 +3,7 @@
     "description": "Laravel-style factories and seeders for Craft CMS — generate and tear down realistic demo content from the command line.",
     "type": "craft-plugin",
     "license": "proprietary",
-    "keywords": ["craft", "cms", "craftcms", "seeder", "factory", "faker", "demo content"],
+    "keywords": ["seeder", "factory", "faker", "demo content", "fake data", "fixtures", "dev tools"],
     "homepage": "https://github.com/AlanOne/craft-seeder",
     "authors": [
         {
